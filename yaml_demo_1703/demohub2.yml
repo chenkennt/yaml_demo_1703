@@ -1,0 +1,62 @@
+### YamlMime:YamlDocument
+documentType: Hub2
+title: .NET Documentation
+description: An optional paragraph of descriptive text for the hub page.
+featured:
+- title: Get Started with C#
+  description: The descriptive text of the item.
+  href: https://www.microsoft.com/net/tutorials/csharp/getting-started
+  image: https://docs.microsoft.com/dotnet/articles/images/hub/featured-1.png
+  hoverImage: https://docs.microsoft.com/dotnet/articles/images/hub/featured-1.svg
+- title: .NET Core API Reference
+  description: The descriptive text of the item.
+  href: http://docs.microsoft.com/dotnet/core/api/
+  image: https://docs.microsoft.com/dotnet/articles/images/hub/featured-2.png
+  hoverImage: https://docs.microsoft.com/dotnet/articles/images/hub/featured-2.svg
+- title: .NET Framework API Reference
+  description: The descriptive text of the item.
+  href: https://msdn.microsoft.com/library/mt472912(v=vs.110).aspx
+  image: https://docs.microsoft.com/dotnet/articles/images/hub/featured-3.png
+  hoverImage: https://docs.microsoft.com/dotnet/articles/images/hub/featured-3.svg
+items:
+  - title: The Tab Title (tabs are hidden if there's only one tab)
+    options:
+      generateAllItem: true
+    items:
+      - title: Get Started
+        id: getstarted
+        description: An optional description for the band.
+        class:
+          - two-column
+          - card-link-list
+        items:
+          - title: What is .NET?
+            href: https://docs.microsoft.com/dotnet/articles/welcome
+            image: https://docs.microsoft.com/dotnet/articles/images/hub/net.svg
+            items:
+              - title: Get Started
+                href: https://docs.microsoft.com/dotnet/articles/standard/getting-started
+              - title: Tour of .NET
+                href: https://docs.microsoft.com/dotnet/articles/standard/components
+              - title: .NET Architectural Concepts
+                href: https://docs.microsoft.com/dotnet/articles/standard/components
+          - title: .NET Core Guide
+            href: https://docs.microsoft.com/dotnet/articles/core
+            image: https://docs.microsoft.com/dotnet/articles/images/hub/netcore.svg
+            items:
+              - title: Get Started
+                href: https://docs.microsoft.com/dotnet/articles/core/tutorials
+              - title: Tutorials
+                href: https://docs.microsoft.com/dotnet/articles/core/tutorials
+              - title: Porting from .NET Framework
+                href: https://docs.microsoft.com/dotnet/articles/core/porting
+              - title: ASP.NET Core
+                href: https://docs.microsoft.com/aspnet/core/getting-started
+          - title: .NET Framework Guide
+            href: https://msdn.microsoft.com/library/w0x726c2(v=vs.110).aspx
+            image: https://docs.microsoft.com/en-us/dotnet/articles/images/hub/netframework.svg
+            items:
+              - title: Get Started
+                href: https://msdn.microsoft.com/library/hh425099(v=vs.110).aspx
+              - title: Tutorials
+                href: https://msdn.microsoft.com/library/hh156542(v=vs.110).aspx
