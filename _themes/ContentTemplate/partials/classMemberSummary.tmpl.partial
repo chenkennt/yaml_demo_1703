@@ -1,0 +1,25 @@
+{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+
+<h2>{{>partials/classSubtitle}} summary</h2>
+
+<table class="nameValue">
+    {{#children}} 
+    <tr class="{{#platform}} platform-{{.}}{{/platform}} enable-platform-filter">
+      {{#summary}}
+      <td>
+      {{/summary}}
+      {{^summary}}
+      <td colspan="2">
+      {{/summary}}
+      {{#name}}
+        <div class="lang-{{lang}}"><a href="#{{id}}">{{value}}</a></div>
+      {{/name}}
+      </td>
+      {{#summary}}
+        <td>
+        {{{summary}}}
+        </td>
+      {{/summary}}
+    </tr>
+    {{/children}}
+</table>

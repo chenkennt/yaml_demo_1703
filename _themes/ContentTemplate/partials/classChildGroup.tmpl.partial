@@ -1,0 +1,144 @@
+{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+<section class="memberGroup">
+  <header class="header{{#platform}} platform-{{.}}{{/platform}} enable-platform-filter" id="{{id}}">
+    {{^hideSubtitle}}
+    <h2>{{>partials/classSubtitle}}</h2>
+    {{/hideSubtitle}}
+  </header>
+
+  <ul class="list-clean{{#platform}} platform-{{.}}{{/platform}} enable-platform-filter">
+
+    {{#children}} 
+    <li class="{{#platform}} platform-{{.}}{{/platform}} enable-platform-filter" id="{{id}}">
+
+      {{#overload}}
+        <a id="{{id}}"></a>
+      {{/overload}}
+
+      {{#editLink}}
+        <div class="memberEditButton">
+          <a href="{{editLink}}" ms.cmpnm="editMember"><i class="icon icon-editor"></i>Edit</a>
+        </div>
+      {{/editLink}}
+
+      <div class="memberName">
+      {{#name}}
+        <div class="lang-{{lang}}">{{value}}</div>        
+      {{/name}}
+      </div>
+
+      {{#summary}}
+        {{{summary}}}
+      {{/summary}}
+
+      {{#syntax}}
+        <pre class="memberDeclaration">{{#content}}<code class="{{lang}} lang-{{lang}}">{{value}}</code>{{/content}}</pre>
+
+		{{#xamlMemberSyntax}}
+		<pre><code class="xaml">{{.}}</code></pre>
+	    {{/xamlMemberSyntax}}
+
+        {{#parameters.0}}
+          <h4>Parameters</h4>
+          <ul class="memberDetails">
+          {{#parameters}}
+            <li>
+              <dl>
+              <dt>{{{id}}}</dt>
+              <dd>
+              {{#type.specName}}
+                <div class="lang-{{lang}}">{{{value}}}</div>
+              {{/type.specName}}
+              </dd>
+              </dl>
+              {{{description}}}
+            </li>
+          {{/parameters}}
+          </ul>
+        {{/parameters.0}}
+
+        {{#return}}
+          <h4>Returns</h4>
+          <ul class="memberDetails">
+            <li>
+              <div class="single">                
+                {{#type.specName}}
+                  <div class="lang-{{lang}}">{{{value}}}</div>
+                {{/type.specName}}
+              </div>
+              {{{description}}}
+            </li>
+          </ul>
+        {{/return}}
+
+        {{#propertyValue}}
+          <h4>Property Value</h4>
+          <ul class="memberDetails">
+            <li>
+              <div class="single">                
+                {{#type.specName}}
+                  <div class="lang-{{lang}}">{{{value}}}</div>
+                {{/type.specName}}
+              </div>
+              {{{description}}}
+            </li>
+          </ul>
+        {{/propertyValue}}
+
+        {{#exceptions.0}}
+          <h4>Exceptions</h4>
+          <ul class="memberDetails">
+          {{#exceptions}}
+            <li>
+              <div class="single">                
+                {{#type.specName}}
+                  <div class="lang-{{lang}}">{{{value}}}</div>
+                {{/type.specName}}
+              </div>
+              {{{description}}}
+            </li>
+          {{/exceptions}}
+          </ul>
+        {{/exceptions.0}}
+
+      {{/syntax}}	  
+      
+      {{#overridden}}
+      <h4>Overrides</h4>
+      {{#nameWithType}}
+        <div class="lang-{{lang}}">
+          <xref href="{{ uid }}" altProperty="fullName" displayProperty="nameWithType">{{ value }}</xref>
+        </div>
+      {{/nameWithType}}
+      {{/overridden}}
+
+      {{#remarks}}
+        <h4>Remarks</h4>
+        {{{remarks}}}
+      {{/remarks}}
+
+      {{#example.0}}
+        <h4>Example</h4>
+        {{#example}}
+        {{{.}}}
+        {{/example}}
+      {{/example.0}}
+
+      {{#requirements_method.0}}
+        <h4>Requirements</h4>
+        {{#requirements_method}}
+        <table>
+            <tbody>
+                <tr>
+                <td>{{{name}}}</td>
+                <td>{{{value}}}</td>
+                </tr>
+            </tbody>
+        </table>
+        {{/requirements_method}}
+      {{/requirements_method.0}}
+
+    </li>
+    {{/children}}
+  </ul>
+</section>

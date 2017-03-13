@@ -1,0 +1,112 @@
+﻿{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+
+{{#synopsis}}
+	<div class="summary">{{{synopsis}}}</div>
+{{/synopsis}}
+
+{{>partials/docOutline}}
+
+{{#syntax.0}}
+	<h2 class="cli" id="syntax">Syntax</h2>
+{{/syntax.0}}
+{{#syntax}}
+	{{#code}}
+		<pre class="syntax"><code class="lang-powershell" dir="ltr">{{code}}</code></pre>
+	{{/code}}
+{{/syntax}}
+
+{{#summary}}
+	<h2 class="cli" id="summary">Summary</h2>
+	{{{summary}}}
+{{/summary}}
+
+{{#description}}
+	<h2 class="cli" id="description">Description</h2>
+	{{{description}}}
+{{/description}}
+
+{{#examples.0}}
+	<h2 class="cli" id="examples">Examples</h2>
+{{/examples.0}}
+{{#examples}}
+	<p><strong>{{title}}</strong></p>
+	{{{introduction}}}
+	<pre><code class="lang-powershell">{{{code}}}</code></pre>
+	{{{remarks}}}
+{{/examples}}
+
+{{#parameters.0}}
+	<h2 class="cli" id="parameters">Parameters</h2>
+{{/parameters.0}}
+{{#parameters}}
+  <div class="parameterName">-{{name}}</div>
+  {{#summary}}
+	<div class="parameterSummary">{{{summary}}}</div>
+  {{/summary}}
+  {{#description}}
+	<div class="parameterSummary">{{{description}}}</div>
+  {{/description}}
+  <div class="parameterSummary">
+	<table class="nameValue">
+		{{#type}}
+		<tr><td>Type:</td><td>{{type}}</td></tr>
+		{{/type}}
+		{{#aliases}}
+		<tr><td>Aliases:</td><td>{{aliases}}</td></tr>
+		{{/aliases}}
+		{{#parameterValueGroup}}
+		<tr><td>Parameter Sets:</td><td>{{parameterValueGroup}}</td></tr>
+		{{/parameterValueGroup}}
+		{{#isRequired}}
+		<tr><td>Required:</td><td>{{isRequired}}</td></tr>
+		{{/isRequired}}
+		{{#position}}
+		<tr><td>Position:</td><td>{{position}}</td></tr>
+		{{/position}}
+		{{#defaultValue}}
+		<tr><td>Default value:</td><td>{{defaultValue}}</td></tr>
+		{{/defaultValue}}
+		{{#pipelineInput}}
+		<tr><td>Accept pipeline input:</td><td>{{pipelineInput}}</td></tr>
+		{{/pipelineInput}}
+		{{#acceptWildcardCharacters}}
+		<tr><td>Accept wildcard characters:</td><td>{{acceptWildcardCharacters}}</td></tr>
+		{{/acceptWildcardCharacters}}
+		{{#valueFrom}}
+		<tr><td>Value from:</td><td>{{valueFrom}}</td></tr>
+		{{/valueFrom}}
+	</table>  
+  </div>
+{{/parameters}}
+
+{{#inputs}}
+	<h2 class="cli" id="inputs">Inputs</h2>
+	{{#typeName}}
+		<p><strong>{{typeName}}</strong></p>
+	{{/typeName}}
+	{{{description}}}
+{{/inputs}}
+
+{{#outputs}}
+	<h2 class="cli" id="outputs">Outputs</h2>
+	{{#typeName}}
+		<p><strong>{{typeName}}</strong></p>
+	{{/typeName}}
+	{{{description}}}
+{{/outputs}}
+
+{{#notes}}
+	<h2 class="cli" id="notes">Notes</h2>
+	{{{notes}}}
+{{/notes}}
+
+{{#links.0}}
+	<h2 class="cli" id="related-links">Related Links</h2>
+	<ul class="list-clean">
+{{/links.0}}
+{{#links}}
+	<li><a href="{{linkUri}}">{{linkName}}</a></li>
+{{/links}}
+{{#links.0}}
+	</ul>
+{{/links.0}}

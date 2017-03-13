@@ -1,0 +1,59 @@
+{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+
+{{#x-internal-ref-name}}
+  <table class="mini">
+    <tr><td>type</td><td>{{{x-internal-ref-name}}}</td></tr>
+  </table>
+{{/x-internal-ref-name}}
+
+{{#x-internal-loop-ref-name}}
+  <table class="mini">
+    <tr><td>type</td><td>{{{x-internal-loop-ref-name}}}</td></tr>
+  </table>
+{{/x-internal-loop-ref-name}}
+
+{{#properties.0}}
+  <ul class="childParam">
+{{/properties.0}}
+{{#properties}}   
+  <li>
+    <h4>{{key}}</h4>
+    {{#value.isSimpleDescription}}
+      {{#value.description}}
+        <p>{{{value.description}}}</p>
+      {{/value.description}}      
+      {{#value.type}}
+        <table class="mini">
+          <tr><td>type</td><td>{{value.type}}</td></tr>
+        </table>
+      {{/value.type}}
+      {{#value.x-internal-loop-ref-name}}
+        <table class="mini">
+          <tr><td>type</td><td>{{{value.x-internal-loop-ref-name}}}</td></tr>
+        </table>
+      {{/value.x-internal-loop-ref-name}}    
+    {{/value.isSimpleDescription}}
+    {{^value.isSimpleDescription}}
+      {{#value.title}}<p>{{{value.title}}}</p>{{/value.title}}
+      {{#value.summary}}<p>{{{value.summary}}}</p>{{/value.summary}}
+      {{#value.description}}<p>{{{value.description}}}</p>{{/value.description}}
+      <table class="nameValue">
+        {{#value.required}}
+          <tr><td>required</td><td>{{value.required}}</td></tr>
+        {{/value.required}}
+        {{#value.readOnly}}
+          <tr><td>read only</td><td>{{value.readOnly}}</td></tr>
+        {{/value.readOnly}}
+        {{#value.type}}
+          <tr><td>type</td><td>{{value.type}}</td></tr>
+        {{/value.type}}
+        {{#value.items}}
+          <tr><td colspan="2">{{>partials/rest.child.param}}</td></tr>
+        {{/value.items}}
+      </table>    
+    {{/value.isSimpleDescription}}
+  </li>
+{{/properties}}
+{{#properties.0}}
+</ul>
+{{/properties.0}}

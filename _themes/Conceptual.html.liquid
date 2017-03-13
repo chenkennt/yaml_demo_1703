@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% assign contentLocale = page.locale | downcase %}
+{% assign pageTemplate = 'Conceptual' %}
+{% if page._op_extendBreadcrumb %}
+  {% assign extendBreadcrumb = page._op_extendBreadcrumb %}
+{% else %}
+  {% assign extendBreadcrumb = false %}
+{% endif %}
+{% if page._op_hideEdit %}
+  {% assign hideEdit = page._op_hideEdit %}
+{% else %}
+  {% assign hideEdit = false %}
+{% endif %}
+{% if page._op_hideViewSource %}
+  {% assign hideViewSource = page._op_hideViewSource %}
+{% else %}
+  {% assign hideViewSource = false %}
+{% endif %}
+{% include htmltag.html %}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="{{ page._op_ogTitle }}" />
+    <meta property="og:image" content="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/microsoft-header.png" />
+    {% if page.description && page.description != page._op_ogTitle && page.description != 'na' %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@docsmsft" />
+    <meta name="twitter:title" content="{{ page._op_ogTitle }}" />
+    <meta name="twitter:description" content="{{ page.description }}" />
+    <meta name="twitter:image" content="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/microsoft-header.png" />    
+    <meta name="twitter:image:alt" content="Microsoft Logo" />
+    {% endif %}
+    {{ metadata }}
+    {% if page._op_searchScope and page._op_searchScope.size > 0 %}
+    <meta name="scope" content="{{ page._op_searchScope | join: ', ' }}" />
+    {% endif %}
+    {% if page._op_brand %}
+      {% assign brand = page._op_brand %}
+    <meta name="brand" content="{{ brand }}" />
+    {% else %}
+      {% assign brand = '' %}
+    {% endif %}
+    {% if page._op_canonicalUrl  %}<link href="{{ page._op_canonicalUrl }}" rel="canonical">{% endif %}
+    <title>{{ page.title }}</title>
+    {% style css\3bcf2c9081582fac6994.conceptual.css %}
+    {% include globalJsNamespace.html %}
+    {% include globalJsScriptIncludes.html %}
+  </head>
+  <body>
+    {% include header.html %}
+    <main>
+      <div class="container" ms.pgarea="body">
+      
+        <div id="sidebar" ms.cmpgrp="left toc" role="navigation" aria-label="main navigation">          
+          <div id="sidebarContent">
+            <div class="filterHolder"></div>
+            <nav class="toc"></nav> 
+            <div class="pdfDownloadHolder"></div>
+          </div>
+          <div class="tocSpace"></div>
+        </div>
+
+        <div id="menu-nav" class="dropdown-container">
+          <div class="dropdown dropdown-full mobilenavi">
+            <select>
+            </select>
+          </div>
+        </div>
+
+        <div id="main" role="main" ms.pgarea="content">
+          <div id="langDisclaimer" class="disclaimer" style="display:none;"><span class="icon icon-disclaimer"></span><span class="disclaimertext">{% loc disclaimer.text %}</span></div>
+          {% include azureDisclaimer.html %}
+          {% if page._op_rawTitle and page._op_rawTitle.size > 0 %}
+            {{ page._op_rawTitle }}
+            <div class="metadata" ms.cmpgrp="page info">
+              <div class="info">
+                <div class="meta loading">
+                  {% if page._op_displayDate %}
+                  <time class="date" datetime="{{ page._op_displayDate_source }}">{{ page._op_displayDate }}</time>
+                  {% else %}
+                    {% if page._op_gitContributorInformation.update_at %}
+                    <span class="date">{{ page._op_gitContributorInformation.update_at }}</span>
+                    {% endif %}
+                  {% endif %}
+                  <span class="reading-time">{% if page._op_wordCount < 200 %} 1{% else %}{{ page._op_wordCount | divided_by: 200 }}{% endif %} {% loc min.to.read %}</span>
+                  {% if page._op_gitContributorInformation.contributors and page._op_gitContributorInformation.contributors.size > 0 %}
+                    <span class="contributors-text">{% loc contributors %}</span>
+                    <ul class="contributors" ms.cmpgrp="contributors">
+                      {% if page._op_gitContributorInformation.contributors.size < 6 %}
+                        {% for contributor in page._op_gitContributorInformation.contributors %}
+                        {% if contributor.profile_url and contributor.profile_url.size > 0 %}
+                          <li><a href="{{ contributor.profile_url }}" title="{{ contributor.display_name }}" ms.cmpnm="contributorprofile"><img src="{{ contributor.profile_url }}.png?size=16" alt="{{ contributor.display_name }}"></a></li>
+                        {% endif %}
+                        {% endfor %}
+                      {% else %}                      
+                        {% for i in (0..4) %}
+                          {% assign contributor = page._op_gitContributorInformation.contributors[i] %}                      
+                          {% if contributor.profile_url and contributor.profile_url.size > 0 %}
+                          <li><a href="{{ contributor.profile_url }}" title="{{ contributor.display_name }}" ms.cmpnm="contributorprofile"><img src="{{ contributor.profile_url }}.png?size=16" alt="{{ contributor.display_name }}"></a></li>
+                          {% endif %}
+                        {% endfor %}
+                        <li><a href="{{ page.content_git_url }}" ms.cmpnm="contributorshowall">{% loc contributors.show.all %}</a></li>
+                      {% endif %}                                        
+                    </ul>
+                  {% endif %}
+                </div>
+                {% if page._op_appliesto and page._op_appliesto.size > 0 %}
+                  <div class="appliesTo">
+                    <span class="appliesToLabel">{% loc applies.to %}</span> 
+                    {{ page._op_appliesto | join: ', ' }}
+                  </div>
+                {% endif %}
+              </div>
+
+              <nav id="center-doc-outline" class="doc-outline" ms.cmpgrp="intopic toc" role="navigation" aria-label="On page navigation">
+                  <h3>{% loc in.this.article %}</h3>
+              </nav>
+
+            </div>
+          {% endif %}
+
+          {{ content }}
+
+          {% if page.product_feedback_displaytext and page.product_feedback_url %}
+            <div class="product-feedback">
+              <span>{% loc product.feedback %}</span>
+              <a href="{{ page.product_feedback_url }}">{{ page.product_feedback_displaytext }}</a>
+            </div>
+          {% endif %}
+
+          <div id="comments-container" ms.pgarea="comments" role="form"></div>
+        </div>
+      </div>
+
+      <div id="openFeedbackContainer" class="openfeedback-container" role="complementary"></div>
+
+    </main>
+
+    <div id="footerPlaceholder"></div>    
+
+    {% include globalJsScriptIncludes_Footer.html %}
+    {% js javascript\3bcf2c9081582fac6994.conceptual.js %}
+  </body>
+</html>

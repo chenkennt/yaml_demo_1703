@@ -1,0 +1,87 @@
+
+  <li class="enable-platform-filter">
+    {{#conceptual}}
+    {{{conceptual}}}
+    {{/conceptual}}
+    {{^conceptual}}
+    <h2 id="{{anchor}}" data-uid="{{uid}}">{{operationName}}</h2>
+    {{#summary}}{{{summary}}}{{/summary}}
+    {{#description}}{{{description}}}{{/description}}
+    {{/conceptual}}
+    
+
+    {{#externalDocs}}
+        <div><strong>See Also</strong>: <a href="{{url}}">{{#value}}{{value}}{{/value}}{{^value}}{{url}}{{/value}}</a></div>
+    {{/externalDocs}}
+
+    {{#MSExamples.0}}
+    <h3>Examples</h3>
+    {{/MSExamples.0}}
+    {{#MSExamples}}
+      <h4>{{ name }}</h4>
+      <pre><code class="lang-json json">{{{ content }}}</code></pre>
+    {{/MSExamples}}
+    <h3>Request</h3>
+    <pre class="syntax"><code class="lang-http http">{{operation}} {{path}}</code></pre>
+
+    {{#parameters.0}}
+      <h3>Properties</h3>
+      <ul class="memberDetails">
+    {{/parameters.0}}
+    {{#parameters}}
+      <li>
+        <h4>{{name}}</h4>
+        {{#description}}
+        {{{description}}}
+        {{/description}}
+        <table class="nameValue">
+        {{#in}}
+          <tr><td>in</td><td>{{in}}</td></tr>
+        {{/in}}
+        <tr><td>required</td><td>{{required}}</td></tr>
+        {{#type}}
+          <tr><td>type</td><td>{{type}}</td></tr>
+        {{/type}}
+        {{#schema}}
+          <tr><td>type</td><td>{{typeName}}</td></tr>
+          <tr><td colspan="2">{{>partials/rest.child.param}}</td></tr>
+        {{/schema}}
+        </table>
+      </li>
+    {{/parameters}}
+    {{#parameters.0}}
+      </ul>
+    {{/parameters.0}}
+    
+    {{#responses.0}}
+      <h3>Returns (HTTP Response Codes)</h3>
+        <ul class="memberDetails">
+          {{#responses}}
+          <li>
+            <h4>{{statusCode}} response</h4>
+            {{#description}}
+            {{{description}}}
+            {{/description}}
+
+            {{#examples}}
+            <pre><code class="lang-json json">
+{{{ content }}}
+            </code></pre>
+            {{/examples}}
+
+            {{#schema}}
+            <table class="nameValue">
+            <tr><td>type</td><td>{{typeName}}</td></tr>
+            <tr><td colspan="2">{{>partials/rest.child.param}}</td></tr>
+            </table>
+            {{/schema}}
+          </li>
+          {{/responses}}
+        </ul>
+    {{/responses.0}}
+  </li>
+
+{{#remarks}}
+  <h3>Remarks</h3>
+  {{{remarks}}}
+{{/remarks}}

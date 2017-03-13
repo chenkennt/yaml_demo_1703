@@ -1,0 +1,72 @@
+﻿{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+
+<section class="memberGroup">
+	<header>
+		{{#editLink}}
+			<div class="memberEditButton">
+				<a href="{{editLink}}" ms.cmpnm="editMember"><i class="icon icon-editor"></i>Edit</a>
+			</div>
+		{{/editLink}}
+		<h2 class="cli" id="{{htmlId}}" data-uid="{{uid}}">{{name}}</h2>
+	</header>
+
+	{{#description}}
+		<div class="summary">{{{description}}}</div>
+	{{/description}}
+	{{^description}}
+		{{#summary}}
+			<div class="summary">{{{summary}}}</div>
+		{{/summary}}
+	{{/description}}
+
+	{{#synopsis}}
+		<h3 class="cli">Synopsis</h3>
+		<pre><code class="lang-azurecli" dir="ltr">{{{synopsis}}}</code></pre>
+	{{/synopsis}}
+
+	{{#examples.0}}
+		<h3 class="cli">Examples</h3>
+	{{/examples.0}}
+	{{#examples}}
+		{{#title}}
+			<p>{{title}}</p>
+		{{/title}}
+		<pre><code class="lang-azurecli" dir="ltr">{{{code}}}</code></pre>
+	{{/examples}}
+
+	{{#requiredParameters.0}}
+		<h3 class="cli">Required Parameters</h3> 
+		<ul class="memberDetails"> 
+	{{/requiredParameters.0}}
+	{{#requiredParameters}}
+		{{>partials/pycli.parameter}}
+	{{/requiredParameters}}
+	{{#requiredParameters.0}}
+		</ul>
+	{{/requiredParameters.0}}
+
+	{{#optionalParameters.0}}
+		<h3 class="cli">Optional Parameters</h3> 
+		<ul class="memberDetails"> 
+	{{/optionalParameters.0}}
+	{{#optionalParameters}}
+		{{>partials/pycli.parameter}}
+	{{/optionalParameters}}
+	{{#optionalParameters.0}}
+		</ul>
+	{{/optionalParameters.0}}
+
+	{{#globalParameters.0}}
+		<div class="globalParams" aria-expanded="false">
+			<a href="#">Global Parameters</a> 
+			<ul class="memberDetails"> 
+	{{/globalParameters.0}}
+	{{#globalParameters}}
+			{{>partials/pycli.parameter}}
+	{{/globalParameters}}
+	{{#globalParameters.0}}
+			</ul>
+		</div>
+	{{/globalParameters.0}}
+
+</section>

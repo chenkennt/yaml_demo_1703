@@ -1,0 +1,49 @@
+﻿{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+
+{{#commands.0}}
+  <h2 id="commands">Commands</h2>
+{{/commands.0}}
+{{#commands}}
+  <h3 id="{{name}}">- {{name}}</h3>
+  {{#description}}
+    <h3>Description</h3>
+    <p>{{description}}</p>
+  {{/description}}
+  {{#usage}}
+    <h3>Usage</h3>
+    <p>{{usage}}</p>
+  {{/usage}}
+  {{#filePath}}
+    <h3>FilePath</h3>
+    <p>{{filePath}}</p>
+  {{/filePath}}
+  {{#options.0}}
+    <h3 id="options">Options</h3>
+  {{/options.0}}
+  {{#options}}
+    <h5 style="padding-bottom: 15px;">- option</h5>
+    <table class="nameValue">
+      {{#flags}}
+        <tr><td>Flags:</td><td>{{flags}}</td></tr>
+      {{/flags}}
+      {{#required}}
+        <tr><td>Required:</td><td>{{required}}</td></tr>
+      {{/required}}
+      {{#optional}}
+        <tr><td>Optional:</td><td>{{optional}}</td></tr>
+      {{/optional}}
+      {{#bool}}
+        <tr><td>Bool:</td><td>{{bool}}</td></tr>
+      {{/bool}}
+      {{#short}}
+        <tr><td>Short:</td><td>{{short}}</td></tr>
+      {{/short}}
+      {{#long}}
+        <tr><td>Long:</td><td>{{long}}</td></tr>
+      {{/long}}
+      {{#description}}
+        <tr><td>Description:</td><td>{{description}}</td></tr>
+      {{/description}}
+    </table>  
+  {{/options}}
+{{/commands}}

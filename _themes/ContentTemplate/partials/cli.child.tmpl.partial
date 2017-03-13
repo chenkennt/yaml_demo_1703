@@ -1,0 +1,70 @@
+﻿{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+
+<h2 id="{{id}}" class="header">{{name}}</h2>
+{{#synopsis}}
+<h3 id="synopsis">Synopsis</h3>
+<p>{{synopsis}}</p>
+{{/synopsis}}
+{{#syntax.0}}
+<h3 id="syntax">Syntax</h3>
+{{/syntax.0}}
+{{#syntax}}
+  {{#code}}
+  <pre class="syntax"><code>{{code}}</code></pre>
+  {{/code}}
+{{/syntax}}
+{{#summary}}
+  <h3 id="summary">Summary</h3>
+  {{{summary}}}
+{{/summary}}
+{{#description}}
+  <h3 id="description">Description</h3>
+  {{{description}}}
+{{/description}}
+{{#examples.0}}
+  <h3 id="examples">Examples</h3>
+{{/examples.0}}
+{{#examples}}
+  <h4 id="{{title}}">{{title}}</h4>
+  {{{introduction}}}
+  <pre><code>{{{code}}}</code></pre>
+  {{{remarks}}}
+{{/examples}}
+{{#parameters.0}}
+  <h3 id="parameters">Parameters</h3>
+{{/parameters.0}}
+{{#parameters}}
+  <h4 id="{{name}}">-{{name}}</h4>
+  {{{summary}}} <br />
+  {{{description}}}
+  <pre><code><span class="parameter-property">Type:</span> {{type}}
+<span class="parameter-property">Aliases:</span> {{#aliases.0}}{{aliases}}{{/aliases.0}}{{#parameterValueGroup}}
+<span class="parameter-property">Accepted values:</span> {{parameterValueGroup}}{{/parameterValueGroup}}
+
+<span class="parameter-property">Required:</span> {{isRequired}}
+<span class="parameter-property">Position:</span> {{position}}
+<span class="parameter-property">Default value:</span> {{defaultValue}}
+<span class="parameter-property">Accept pipeline input:</span> {{pipelineInput}}
+<span class="parameter-property">Accept wildcard characters:</span> {{acceptWildcardCharacters}}
+{{#valueFrom}}<span class="parameter-property">Value from:</span> {{valueFrom}}{{/valueFrom}}</code></pre>
+{{/parameters}}
+<h3 id="inputs">Inputs</h3>
+{{#inputs}}
+  {{#typeName}}
+  <h4 id="{{typeName}}">{{typeName}}</h4>
+  {{/typeName}}
+  {{{description}}}
+{{/inputs}}
+<h3 id="outputs">Outputs</h3>
+{{#outputs}}
+  {{#typeName}}
+  <h3 id="{{typeName}}">{{typeName}}</h3>
+  {{/typeName}}
+  {{{description}}}
+{{/outputs}}
+<h3 id="notes">Notes</h3>
+{{{notes}}}
+<h3 id="related-links">Related Links</h3>
+{{#links}}
+<h4><a href="{{linkUri}}">{{linkName}}</a></h4>
+{{/links}}

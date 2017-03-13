@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% assign contentLocale = page.locale | downcase %}
+{% assign pageTemplate = 'LandingPage' %}
+{% if page._op_extendBreadcrumb %}
+  {% assign extendBreadcrumb = page._op_extendBreadcrumb %}
+{% else %}
+  {% assign extendBreadcrumb = false %}
+{% endif %}
+{% include htmltag.html %}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="{{ page._op_ogTitle }}" />
+    <meta property="og:image" content="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/microsoft-header.png" />
+    {% if page.description && page.description != page._op_ogTitle && page.description != 'na' %}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@docsmsft" />
+    <meta name="twitter:title" content="{{ page._op_ogTitle }}" />
+    <meta name="twitter:description" content="{{ page.description }}" />
+    <meta name="twitter:image" content="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/microsoft-header.png" />    
+    <meta name="twitter:image:alt" content="Microsoft Logo" />
+    {% endif %}
+    {{ metadata }}
+    {% if page._op_searchScope and page._op_searchScope.size > 0 %}
+    <meta name="scope" content="{{ page._op_searchScope | join: ', ' }}" />
+    {% endif %}
+    {% if page._op_brand %}
+      {% assign brand = page._op_brand %}
+    <meta name="brand" content="{{ brand }}" />
+    {% else %}
+      {% assign brand = '' %}
+    {% endif %}
+    {% if page._op_canonicalUrl  %}<link href="{{ page._op_canonicalUrl }}" rel="canonical">{% endif %}
+    <title>{{ page.title }}</title>
+    {% style css\3bcf2c9081582fac6994.landingpage.css %}
+    {% include globalJsNamespace.html %}
+    {% include globalJsScriptIncludes.html %}
+  </head>
+  <body>
+    {% include header.html %}
+    <main>
+      <div class="container" ms.pgarea="body">
+
+        <div id="sidebar" ms.cmpgrp="left toc" role="navigation" aria-label="main navigation">
+          <div id="sidebarContent">
+            <div class="filterHolder"></div>
+            <nav class="toc"></nav>          
+            <div class="pdfDownloadHolder"></div>
+          </div>
+          <div class="tocSpace"></div>
+        </div>
+
+        <div id="menu-nav" class="dropdown-container">
+          <div class="dropdown dropdown-full mobilenavi">
+            <select>
+            </select>
+          </div>
+        </div>
+
+        <div id="main" role="main" ms.pgarea="content">
+          <div id="langDisclaimer" class="disclaimer" style="display:none;"><span class="icon icon-disclaimer"></span><span class="disclaimertext">{% loc disclaimer.text %}</span></div>
+          {% include azureDisclaimer.html %}
+          {% if page._op_rawTitle and page._op_rawTitle.size > 0 %}
+            {{ page._op_rawTitle }}
+          {% endif %}
+          {{ content }}
+        </div>
+      </div>
+
+    </main>
+
+    <div id="footerPlaceholder"></div>
+
+    {% include globalJsScriptIncludes_Footer.html %}
+    {% js javascript\3bcf2c9081582fac6994.landingpage.js %}
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% assign contentLocale = page.locale | downcase %}
+{% if page._op_extendBreadcrumb %}
+  {% assign extendBreadcrumb = page._op_extendBreadcrumb %}
+{% else %}
+  {% assign extendBreadcrumb = true %}
+{% endif %}
+{% assign pageTemplate = 'Rest' %}
+{% include htmltag.html %}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="{{ page._op_ogTitle }}"/>
+    {{ metadata }}
+    {% if page._op_searchScope and page._op_searchScope.size > 0 %}
+    <meta name="scope" content="{{ page._op_searchScope | join: ', ' }}" />
+    {% endif %}
+    {% if page._op_brand %}
+      {% assign brand = page._op_brand %}
+    <meta name="brand" content="{{ brand }}" />
+    {% else %}
+      {% assign brand = '' %}
+    {% endif %}
+    {% if page._op_canonicalUrl != null  %}<link href="{{ page._op_canonicalUrl}}" rel="canonical">{% endif %}
+    <title>{{ page.title }}</title>
+    {% style css\3bcf2c9081582fac6994.restapi.css %}
+    {% include globalJsNamespace.html %}
+    {% include globalJsScriptIncludes.html %}
+  </head>
+  <body class="restPage">
+		{% include header.html %}
+    <main>
+		  <div class="container" ms.pgarea="body">
+
+        <div id="sidebar" ms.cmpgrp="left toc" role="navigation" aria-label="main navigation">
+          <div id="sidebarContent">
+            <div class="filterHolder"></div>
+            <nav class="toc"></nav>          
+            <div class="pdfDownloadHolder"></div>
+          </div>
+          <div class="tocSpace"></div>
+        </div>
+
+        <div id="menu-nav" class="dropdown-container">
+          <div class="dropdown dropdown-full mobilenavi">
+            <select>
+            </select>
+          </div>
+        </div>
+		
+        <div id="main" role="main" ms.pgarea="content">
+          <div id="langDisclaimer" class="disclaimer" style="display:none;"><span class="icon icon-disclaimer"></span><span class="disclaimertext">{% loc disclaimer.text %}</span></div>
+          {% include azureDisclaimer.html %}
+          {{ content }}
+          {% if page.product_feedback_displaytext != null && page.product_feedback_url != null %}
+            <div class="product-feedback">
+              <span>{% loc product.feedback %}</span>
+              <a href="{{ page.product_feedback_url }}">{{ page.product_feedback_displaytext }}</a>
+            </div>
+          {% endif %}
+        </div>
+
+		  </div>
+
+      <div id="openFeedbackContainer" class="openfeedback-container footer-layout"></div>
+      
+    </main>
+
+    <div id="footerPlaceholder"></div>
+
+    {% include globalJsScriptIncludes_Footer.html %}
+		{% js javascript\3bcf2c9081582fac6994.rest.js %}
+  </body>
+</html>

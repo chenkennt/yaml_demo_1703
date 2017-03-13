@@ -1,0 +1,11 @@
+﻿{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+
+<h1>Common</h1>
+
+{{#examples.0}}
+	<h3>Examples</h3>
+{{/examples.0}}
+{{#examples}}
+	<p>{{title}}</p>
+	<pre><code class="lang-azurecli" dir="ltr">{{{code}}}</code></pre>
+{{/examples}}

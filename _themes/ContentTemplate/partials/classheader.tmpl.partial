@@ -1,0 +1,102 @@
+{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+<h2>Syntax</h2>
+
+{{#syntax}}
+	<h3>Declaration</h3>
+	<pre class="memberDeclaration">{{#content}}<code class="{{lang}} lang-{{lang}}">{{value}}</code>{{/content}}</pre>
+
+	{{#xamlSyntax}}
+	<pre><code class="xaml">{{.}}</code></pre>
+	{{/xamlSyntax}}
+
+	{{#typeParameters.0}}
+	<h2>Type Parameters</h2>
+
+	<table class="nameValue">
+	{{#typeParameters}}
+		<tr>
+		<td>
+		{{id}}
+		</td>
+		<td>
+		{{{description}}}
+		</td>
+		</tr>
+	{{/typeParameters}}
+	</table>
+	{{/typeParameters.0}}
+{{/syntax}}
+
+{{#inheritance.0}}
+<h3>Inheritance Hierarchy</h3>
+<ul class="inheritance">
+  {{#inheritance}}
+    <li class="l{{index}}">
+      {{#specName}}
+      <div class="lang-{{lang}}">
+        {{{value}}}
+      </div>
+      {{/specName}}
+    </li>
+  {{/inheritance}}
+  <li class="l{{item.level}}">
+    <div class="xref">
+      {{#item.name}}
+      <div class="lang-{{lang}}">{{value}}</div>
+      {{/item.name}}
+    </div>
+  </li>
+  {{#derivedClasses}}
+    <li class="l{{index}}">
+      {{#specName}}
+      <div class="lang-{{lang}}">
+        {{{value}}}
+      </div>
+      {{/specName}}
+    </li>
+  {{/derivedClasses}}
+  {{#hiddenDerivedClasses.0}}
+    {{#hiddenDerivedClasses}}
+      <li class="l{{index}} hiddenDerivedClass" hidden>
+        {{#specName}}
+        <div class="lang-{{lang}}">
+          {{{value}}}
+        </div>
+        {{/specName}}
+      </li>
+    {{/hiddenDerivedClasses}}
+    <li class="l{{hiddenDerivedClassesIndex}}">
+      <a class="derivedClassesButton" href="#">More&#8230;</a>
+    </li>
+  {{/hiddenDerivedClasses.0}}
+</ul>
+{{/inheritance.0}}
+
+{{#inheritedMembers.0}}
+  <div class="referencebox inheritedMembers">
+    <h3>Inherited Members</h3>
+{{/inheritedMembers.0}}
+  {{#newInheritedMembers}}
+    <h4>{{name}}</h4>
+    {{#children}}
+      {{#specName}}
+      <div class="lang-{{lang}}">
+        {{{value}}}
+      </div>
+      {{/specName}}
+      {{^last}}, {{/last}}
+    {{/children}}
+  {{/newInheritedMembers}}
+{{#inheritedMembers.0}}
+  </div>
+{{/inheritedMembers.0}}
+
+{{#conceptual}}
+  <h2>Examples</h2>
+  {{{conceptual}}}
+{{/conceptual}}
+
+{{#remarks}}
+  <h2>Remarks</h2>
+  {{{remarks}}}
+{{/remarks}}

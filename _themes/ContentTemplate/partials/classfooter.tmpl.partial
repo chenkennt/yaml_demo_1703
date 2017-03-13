@@ -1,0 +1,104 @@
+{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+{{#defined_in}}
+  <h2>Defined in</h2>
+  {{{defined_in}}}
+{{/defined_in}}
+
+{{#supported_platforms.0}}
+  <h2>Supported Platforms</h2>
+  {{#supported_platforms}}
+  <table>
+      <tbody>
+          <tr>
+          <td>{{{name}}}</td>
+          <td>{{{value}}}</td>
+          </tr>
+      </tbody>
+  </table>
+  {{/supported_platforms}}
+{{/supported_platforms.0}}
+
+{{#requirements.0}}
+  <h2>Requirements</h2>
+  {{#requirements}}
+    <table>
+        <tbody>
+            <tr>
+            <td>{{{name}}}</td>
+            <td>{{{value}}}</td>
+            </tr>
+        </tbody>
+    </table>
+  {{/requirements}}
+{{/requirements.0}}
+
+{{#thread_safety}}
+  {{>partials/threadsafety}}
+{{/thread_safety}}
+
+{{#deviceFamilies.0}}
+  <h2>Device family</h2>
+    {{#deviceFamilies}}
+      <div>{{.}}</div>
+    {{/deviceFamilies}}
+{{/deviceFamilies.0}}
+
+{{#apiContracts.0}}
+  <h2>API contract</h2>
+    {{#apiContracts}}
+      <div><span class="xref">{{.}}</a></div>
+    {{/apiContracts}}
+{{/apiContracts.0}}
+
+{{#capabilities.0}}
+  <h2>Capabilities</h2>
+    {{#capabilities}}
+      <div>{{.}}</div>
+    {{/capabilities}}
+{{/capabilities.0}}
+
+{{#attributes.0}}
+  <h2>Attributes</h2>
+    {{#attributes}}
+      <div><span class="xref">{{type}}</span></div>
+    {{/attributes}}
+{{/attributes.0}}
+
+{{#shouldRenderDetails}}
+  <h2>Details</h2>
+  {{#namespace}}
+    <div class="lang-csharp lang-vb enable-lang-filter detailTile">
+      <h4>Namespace</h4>    
+      <div>{{namespace}}</div>
+    </div>
+  {{/namespace}}
+  {{#assemblies.0}}
+    <div class="lang-csharp lang-vb enable-lang-filter detailTile">
+      <h4>Assembly</h4>    
+      <div>{{assemblies.0}}.dll</div>
+    </div>
+  {{/assemblies.0}}
+  {{#packages.0}}
+    <div class="detailTile">
+      <h4>Nuget Packages</h4>    
+      <div>{{packages.0}}</div>
+    </div>
+  {{/packages.0}}
+  {{#package}}
+    <div class="lang-java enable-lang-filter detailTile">
+      <h4>Package</h4>
+      <div>{{package}}</div>
+    </div>
+  {{/package}}
+{{/shouldRenderDetails}}
+
+{{#seealso.0}}
+<h2>See Also</h2>
+<ul class="list-clean">
+  {{#seealso}}
+    {{#type.specName}}
+      <li><div class="lang-{{lang}}">{{{value}}}</div></li>
+    {{/type.specName}}
+  {{/seealso}}
+</ul>
+{{/seealso.0}}

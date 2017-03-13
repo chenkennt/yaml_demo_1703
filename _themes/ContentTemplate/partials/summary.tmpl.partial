@@ -1,0 +1,9 @@
+{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+<div class="summary">
+	{{#editLink}}
+		<div class="memberEditButton">
+			<a href="{{editLink}}" ms.cmpnm="editMember"><i class="icon icon-editor"></i>Edit</a>
+		</div>
+	{{/editLink}}
+	{{{summary}}}
+</div>

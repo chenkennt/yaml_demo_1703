@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% assign contentLocale = page.locale | downcase %}
+{% assign pageTemplate = 'SearchPage' %}
+{% if page._op_extendBreadcrumb %}
+  {% assign extendBreadcrumb = page._op_extendBreadcrumb %}
+{% else %}
+  {% assign extendBreadcrumb = false %}
+{% endif %}
+{% include htmltag.html %}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="{{ page._op_ogTitle }}"/>
+    <meta name="ms.pagetype" content="search" />
+    <meta name="ms.sitename" content="DOCS" />
+    {{ metadata }}
+    {% if page._op_brand %}
+      {% assign brand = page._op_brand %}
+    <meta name="brand" content="{{ brand }}" />
+    {% else %}
+      {% assign brand = '' %}
+    {% endif %}
+    {% if page._op_canonicalUrl != null %}<link href="{{ page._op_canonicalUrl }}" rel="canonical">{% endif %}
+    <title>{{ page.title }}</title>
+    {% style css\3bcf2c9081582fac6994.searchpage.css %}
+    {% include globalJsNamespace.html %}
+    {% include globalJsScriptIncludes.html %}
+  </head>
+  <body class="searchPage">
+    {% include header.html %}
+    <main ms.pgarea="body">      
+      <div class="container">
+        <div id="main">      
+          <h1></h1>
+          {{ content }}
+          <div class="searchResults" ms.cmpgrp="searchResults"></div>
+          <div class="searchPaging" ms.cmpgrp="searchPaging">
+            <ul></ul>
+          </div>
+        </div>        
+      </div>
+    </main>
+    <div id="footerPlaceholder"></div>
+    {% include globalJsScriptIncludes_Footer.html %}
+    {% js javascript\3bcf2c9081582fac6994.searchpage.js %}
+  </body>
+</html>

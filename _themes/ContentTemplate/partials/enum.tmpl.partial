@@ -1,0 +1,30 @@
+{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+<!-- ENUM -->
+{{>partials/header}}
+{{>partials/summary}}
+{{>partials/classheader}}
+{{#children}}
+    {{#inConstructor}}
+    {{>partials/classChildGroup}}
+    {{/inConstructor}}
+    {{#inField}}
+    {{>partials/enumFieldGroup}}
+    {{/inField}}
+    {{#inProperty}}
+    {{>partials/classChildGroup}}
+    {{/inProperty}}
+    {{#inMethod}}
+    {{>partials/classChildGroup}}
+    {{/inMethod}}
+    {{#inEvent}}
+    {{>partials/classChildGroup}}
+    {{/inEvent}}
+    {{#inOperator}}
+    {{>partials/classChildGroup}}
+    {{/inOperator}}
+    {{#inEii}}
+    {{>partials/classChildGroup}}
+    {{/inEii}}
+{{/children}}
+
+{{>partials/classfooter}}

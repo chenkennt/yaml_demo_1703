@@ -1,0 +1,30 @@
+﻿{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+
+<h1 id="{{htmlId}}" data-uid="{{uid}}">{{name}}</h1>
+
+{{#summary}}
+	<div class="summary">{{{summary}}}</div>
+{{/summary}}
+{{^summary}}
+	{{#description}}
+		<div class="summary">{{{description}}}</div>
+	{{/description}}
+{{/summary}}
+
+{{>partials/docOutline}}
+
+{{#commandList.0}}
+	<h2 class="cli">Commands</h2>
+	<table class="nameValue">
+		{{#commandList}}
+			<tr>
+				<td><a href="{{href}}">{{name}}</a></td>
+				<td>{{description}}</td>
+			</tr>
+		{{/commandList}}
+	</table>
+{{/commandList.0}}
+
+{{#children}}
+  {{>partials/pycli.child}}
+{{/children}}

@@ -1,0 +1,25 @@
+{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+
+<li>
+	<div class="parameterName">{{name}}</div>
+	{{#summary}}
+		<div class="parameterSummary">{{{summary}}}</div>
+	{{/summary}}
+	{{#description}}
+		<div class="parameterSummary">{{{description}}}</div>
+	{{/description}}
+
+	{{#showParameterInfo}}
+		<div class="parameterInfo">
+			{{#parameterValueGroup}}
+				<div><span class="likeAlabel">accepted values:</span> {{parameterValueGroup}}</div>
+			{{/parameterValueGroup}}
+			{{#defaultValue}}
+				<div><span class="likeAlabel">default value:</span> {{defaultValue}}</div>
+			{{/defaultValue}}
+			{{#valueFrom}}
+				<div><span class="likeAlabel">value from:</span> {{valueFrom}}</div>
+			{{/valueFrom}}		
+		</div>
+	{{/showParameterInfo}}
+</li>

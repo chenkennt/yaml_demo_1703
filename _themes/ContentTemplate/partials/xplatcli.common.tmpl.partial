@@ -1,0 +1,16 @@
+﻿{{!Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE file in the project root for full license information.}}
+
+{{#name}}
+  <h2 id="name">Name</h2>
+  {{{name}}}
+{{/name}}
+
+{{#description}}
+  <h2 id="description">Description</h2>
+  {{{description}}}
+{{/description}}
+
+{{#usage}}
+  <h2 id="usage">Usage</h2>
+  {{{usage}}}
+{{/usage}}
