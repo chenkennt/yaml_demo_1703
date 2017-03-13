@@ -1,0 +1,309 @@
+* {
+  box-sizing: content-box;
+}
+
+html, body {    
+  font-family: segoe-ui_normal, 'Segoe UI', Segoe, 'Segoe WP', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+code, kbd, pre, samp {
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: auto;
+  font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+  line-height:1.25;
+}
+
+h1 {
+  font-family: segoe-ui_light, 'Segoe UI Light', 'Segoe WP', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+h3, h4, h5, h6 {
+  font-family: segoe-ui_semibold, 'Segoe UI Semibold', 'Segoe WP', 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+@font-face {
+    font-family: 'segoe-ui_normal';
+    src:url("//i.s-microsoft.com/fonts/segoe-ui/west-european/normal/latest.eot");
+    src:local("Segoe UI"),
+        local("Segoe"),
+        local("Segoe WP"),
+        url("//i.s-microsoft.com/fonts/segoe-ui/west-european/normal/latest.eot?#iefix") format("embedded-opentype"),
+        url("//i.s-microsoft.com/fonts/segoe-ui/west-european/normal/latest.woff") format("woff"),
+        url("//i.s-microsoft.com/fonts/segoe-ui/west-european/normal/latest.ttf") format("truetype"),
+        url("//i.s-microsoft.com/fonts/segoe-ui/west-european/normal/latest.svg#web") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'segoe-ui_light';
+    src: url("//i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.eot");
+    src: local("Segoe UI Light"),
+         url("//i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.eot?#iefix") format("embedded-opentype"),
+         url("//i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.woff") format("woff"),
+         url("//i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.ttf") format("truetype"),
+         url("//i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.svg#web") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'segoe-ui_semibold';
+    src: url("//i.s-microsoft.com/fonts/segoe-ui/west-european/Semibold/latest.eot");
+    src: local("Segoe UI Semibold"),
+         url("//i.s-microsoft.com/fonts/segoe-ui/west-european/Semibold/latest.eot?#iefix") format("embedded-opentype"),
+         url("//i.s-microsoft.com/fonts/segoe-ui/west-european/Semibold/latest.woff") format("woff"),
+         url("//i.s-microsoft.com/fonts/segoe-ui/west-european/Semibold/latest.ttf") format("truetype"),
+         url("//i.s-microsoft.com/fonts/segoe-ui/west-european/Semibold/latest.svg#web") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+        font-family: "segoe-ui_normal";
+        src: url("//i.s-microsoft.com/fonts/segoe-ui/west-european/normal/latest.svg") format("svg")
+    }
+
+    @font-face {
+        font-family: "segoe-ui_light";
+        src: url("//i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.svg") format("svg")
+    }
+
+    @font-face {
+        font-family: "segoe-ui_semibold";
+        src: url("//i.s-microsoft.com/fonts/segoe-ui/west-european/Semibold/latest.svg") format("svg")
+    }
+}
+
+.uhf {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 120px;
+  z-index: 10000
+}
+
+.uhf > .l0 {
+  color: #2F2F2F;
+  background: white;
+  width: 100%;
+  height: 50px;
+}
+
+.uhf > .l1 {
+  color: white;
+  background: #333;
+  width: 100%;
+  height: 56px;
+}
+
+#app-host {
+  position: absolute;
+  top: 106px;
+  left: 0px;
+  right: 0px;
+}
+
+.landing-page header {
+  background: rgb(0, 123, 184);
+  background: linear-gradient(135deg, rgba(5,165,240,1) 10%, rgb(0, 123, 184) 100%);
+  color: white;
+  position: fixed;
+  top: 106px;
+  left: 0;
+  right: 0px;
+  transition: all .2s;
+  box-shadow: 0 2px 5px #e8e8e8;
+  z-index: 1000;
+}
+
+.landing-page .guide-title {
+  margin-top: 32px;
+  margin-bottom: 8px;
+  text-align: center;
+  transition: all .2s;
+}
+
+.landing-page .spacer {
+  min-height: 186px;
+  transition: all .2s;
+}
+
+.landing-page .quick-info {
+  text-align: center;
+  transition: all .2s;
+  margin: 8px 0;
+}
+
+.landing-page .quick-info span {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.landing-page .guide-description {
+  text-align: center;
+  width: 1024px;
+  margin: 16px auto 32px auto;
+  transition: all .2s;
+}
+
+.landing-page .summary {
+  width: 1024px;
+  margin: auto;
+  transition: all .2s;
+  display: flex;
+}
+
+.parts {
+  margin-top: 32px;
+}
+
+.part {
+  margin-top: 16px;
+}
+
+.part-header {
+  border: 1px solid #dbdbdb;
+  padding: 6px 12px;
+  box-shadow: 0 2px 5px #e8e8e8;
+  display: flex;
+  align-items: center;
+  margin: 16px;
+  background: white;
+}
+
+.part-body {
+  border-left: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+  margin: -16px 32px 32px 32px;
+  padding: 20px 8px 8px 8px;
+}
+
+.part-body .part-description {
+  text-align: center;
+}
+
+.part-header h2 {
+  margin: 4px;
+  flex-grow: 1;
+}
+
+.landing-page .summary .parts {
+  width: 70%;
+}
+
+.skills {
+  margin: 32px;
+}
+
+.skills .skill {
+  list-style: none;
+  border: 1px solid #dbdbdb;
+  padding: 6px 12px;
+  box-shadow: 0 2px 5px #e8e8e8;
+  margin: 0 0 4px -42px;
+  font-family: monospace;
+}
+
+footer {
+  clear: both;
+  background: black;
+  height: 120px;
+  transition: all .2s;
+}
+
+step-completion-indicator {
+  width: 12px;
+  display: inline-block;
+}
+
+li.step {
+  list-style: none;
+  margin: 0 0 8px -16px;
+  display: flex;
+  align-items: center;
+}
+
+li.step a {
+  margin-left: 12px;
+  text-decoration: none;
+  color: rgb(0, 123, 184);
+  flex-grow: 1;
+}
+
+li.step a:hover {
+  text-decoration: underline;
+}
+
+li.step .title {
+  font-size: 18px;
+}
+
+li.step .duration {
+  margin-right: 24px;
+}
+
+.reset-container {
+  text-align: center;
+}
+
+.button {
+  background: rgb(0, 123, 184);
+  border: transparent;
+  color: white;
+  padding: 4px;
+  min-width: 80px;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  transition: box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.2s;
+  text-align: center;
+  font-size: 12px;
+  margin: 2px;
+  display: inline-block;
+  border: 0;
+  outline: none;
+  text-transform: uppercase;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:active {
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  transition-delay: 0s;
+}
+
+li.step a[disabled] {
+  color: gray;
+  text-decoration: none;
+  cursor: default;
+}
+
+.marker {
+  position: absolute;
+  color: white;
+  background: rgb(0,138,0);
+  padding: 6px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity .2s;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.marker::before {
+  right: -10px;
+  top: 7.5px;
+  content: "";
+  border-width: 6px;
+  position: absolute;
+  border-style: solid;
+  border-left-color: rgb(0,138,0);
+  border-right-color: transparent;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
