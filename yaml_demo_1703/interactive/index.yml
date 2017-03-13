@@ -1,0 +1,49 @@
+### YamlMime:YamlDocument
+documentType: GuideLanding
+title: Guide Title
+audience: Developers
+level: Intermediate
+description: This is a POC for interactive guide.
+guideLayout:
+  name: two-column
+  slots:
+  - name: default
+    content:
+      type: azure-cli
+skills:
+- HTML
+- NodeJS
+- Azure Storage
+- JavaScript
+- CSS
+items:
+- title: Part One Title
+  description: This is part One's description.
+  items:
+  - title: Step 1
+    duration: 2m
+    href: part-1-step-1.md
+  - title: Step 2
+    duration: 3m
+    href: part-1-step-2.md
+  - title: Step 3
+    duration: 4m
+    href: part-1-step-3.md
+  - title: Step 4
+    duration: 1m
+    href: part-1-step-4.md
+- title: Part Two Title
+  description: This is part Two's description.
+  items:
+  - title: Step 1
+    duration: 2m
+    href: part-2-step-1.md
+  - title: Step 2
+    duration: 3m
+    href: part-2-step-2.md
+  - title: Step 3
+    duration: 4m
+    href: part-2-step-3.md
+  - title: Step 4
+    duration: 1m
+    href: part-2-step-4.md

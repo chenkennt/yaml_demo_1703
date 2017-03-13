@@ -1,0 +1,69 @@
+﻿  <div aurelia-app="main" id="app-host">
+    <div with.bind="introduction" class="landing-page" show.bind="animator.visible" header-animation>
+      <header ref="animator.header">
+        <h1 class="guide-title">{{title}}</h1>
+
+        <div class="quick-info">
+          <span>{{audience}}</span>&middot;
+          <span>{{level}}</span>&middot;
+          <span>{{duration}} Minutes</span>
+        </div>
+
+        <div class="guide-description">{{description}}</div>
+      </header>
+
+      <div class="spacer"></div>
+
+      <div class="summary" ref="animator.summary">
+        <div class="parts">
+          {{#items}}
+          <div class="part">
+            <div class="part-header">
+              <h2 class="title">&#8756; {{title}}</h2>
+              <part-completion-indicator part="Part One Title"></part-completion-indicator>
+            </div>
+
+            <div class="part-body">
+              <div class="part-description">
+              {{description}}
+              </div>
+
+              <ol class="steps">
+              {{#items}}
+                <li class="step">
+                  <step-completion-indicator step="{{href}}"></step-completion-indicator>
+                  <a href="#{{id}}" step-progress><span class="title">{{title}}</span></a>
+                  <span class="duration">{{duration}}<span>
+                </li>
+              {{/items}}
+              </ol>
+            </div>
+          </div>
+          {{/items}}
+        </div>
+
+        <div class="skills">
+          <h3>Skills</h3>
+          <ul>
+          {{#skills}}
+            <li class="skill">{{.}}</li>
+          {{/skills}}
+          </ul>
+          <div class="reset-container">
+            <button class="button" click.trigger="reset()">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <footer ref="animator.footer"></footer>
+    </div>
+
+    <steps view-model.ref="steps"></steps>
+    <conclusion view-model.ref="conclusion"></conclusion>
+  </div>
+  
+  <script>
+    (function (global) {
+      global.guide = {{{stringified}}};
+    })(window);
+  </script>
