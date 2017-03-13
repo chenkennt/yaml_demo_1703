@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Guide Title | Microsoft Docs</title>
-  <link rel="stylesheet" href="_themes/styles/interactive-guides.css">
+  <!--<link rel="stylesheet" href="_themes/styles/interactive-guides.css">-->
+  {% style styles/interactive-guides.css %}
 </head>
 
 <body>
@@ -15,7 +16,8 @@
 
       {{ content }}
 
-  <script src="_themes/scripts/interactive-guides.js" data-main="aurelia-bootstrapper"></script>
+  <!--<script src="_themes/scripts/interactive-guides.js" data-main="aurelia-bootstrapper"></script>-->
+  {% js scripts/interactive-guides.js %}
 </body>
 
 </html>
