@@ -1,0 +1,68 @@
+<div><div class="content">
+<div id="main" class="v2">
+    <div class="container">
+        <ul class="cardsY panelContent featuredContent">
+        {{#featured}}
+            <li>
+                <a href="{{href}}">
+                    <div class="cardSize">
+                        <div class="cardPadding">
+                            <div class="card">
+                                <div class="cardImageOuter">
+                                    <div class="cardImage">
+                                        <img data-hoverimage="{{hoverImage}}" src="{{image}}" alt="" />
+                                    </div>
+                                </div>
+                                <div class="cardText">
+                                    <h3>{{title}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        {{/featured}}
+        </ul>
+    </div>
+    <div class="container">
+        <h1>{{title}}</h1>
+        <ul class="pivots">
+        {{#items}}
+            <li>
+                <a data-default="true" href="#docs">Docs</a>
+                <ul id="docs">
+                {{#items}}
+                    <li>
+                        <a href="#{{id}}">{{title}}</a>
+                        <ul id="{{id}}" class="cardsF">
+                        {{#items}}
+                            <li>
+                                <div class="cardSize">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage">
+                                                    <img src="{{image}}" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3><a href="{{href}}">{{title}}</a></h3>
+                                                {{#items}}
+                                                <p><a href="{{href}}">{{title}}</a></p>
+                                                {{/items}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {{/items}}
+                        </ul>
+                    </li>
+                {{/items}}
+                </ul>
+            </li>
+        {{/items}}
+        </ul>
+    </div>
+</div>
+</div></div>
