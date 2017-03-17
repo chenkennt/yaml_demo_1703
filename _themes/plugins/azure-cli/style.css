@@ -1,0 +1,47 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: helvetica, sans-serif, arial;
+    font-size: 1em;
+    color: #111;
+}
+
+h1 {
+    text-align: center;
+}
+
+#terminal-wrapper {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#terminal-container {
+    flex: 1 1 auto;
+    overflow: hidden;
+}
+
+#terminal-container .terminal {
+    background-color: #000;
+    color: #fafafa;
+    padding: 2px;
+}
+
+#terminal-container .terminal:focus .terminal-cursor {
+    background-color: #fafafa;
+}
+
+#terminal-header {
+    background-color: #eee;
+    font-size: 14px;
+    padding: 6px;
+}
+
+#terminal-container .xterm.fullscreen {
+    position: relative;
+}
