@@ -16,6 +16,7 @@ skills:
 - Azure Storage
 - JavaScript
 - CSS
+- SQL
 items:
 - title: Part One Title
   description: This is part One's description.
@@ -32,6 +33,9 @@ items:
   - title: Step 4
     duration: 1m
     href: part-1-step-4.md
+  - title: Step 5
+    duration: 2m
+    href: part-1-step-5.md
 - title: Part Two Title
   description: This is part Two's description.
   items:

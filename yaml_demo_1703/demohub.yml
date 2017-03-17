@@ -1,5 +1,5 @@
 ### YamlMime:YamlDocument
-documentType: Hub2
+documentType: Hub
 title: .NET Documentation
 description: An optional paragraph of descriptive text for the hub page.
 featured:
@@ -53,14 +53,6 @@ items:
               - title: ASP.NET Core
                 href: https://docs.microsoft.com/aspnet/core/getting-started
           - title: .NET Framework Guide
-            href: https://msdn.microsoft.com/library/w0x726c2(v=vs.110).aspx
-            image: https://docs.microsoft.com/en-us/dotnet/articles/images/hub/netframework.svg
-            items:
-              - title: Get Started
-                href: https://msdn.microsoft.com/library/hh425099(v=vs.110).aspx
-              - title: Tutorials
-                href: https://msdn.microsoft.com/library/hh156542(v=vs.110).aspx
-          - title: .NET Core Guide
             href: https://msdn.microsoft.com/library/w0x726c2(v=vs.110).aspx
             image: https://docs.microsoft.com/en-us/dotnet/articles/images/hub/netframework.svg
             items:
