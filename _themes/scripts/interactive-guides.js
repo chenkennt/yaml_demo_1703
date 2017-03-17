@@ -6573,7 +6573,7 @@ define('interactivity/azure-cli',["require", "exports", "aurelia-dependency-inje
             var armEndpoint = getQueryParameter('env') === 'dogfood'
                 ? "https://api-dogfood.resources.windows-int.net"
                 : "https://management.azure.com";
-            this.terminal.src = './_themes/plugins/azure-cli/index.html?trustedAuthority=' + window.location.origin + '&arm=' + armEndpoint;
+            this.terminal.src = '../_themes/plugins/azure-cli/index.html?trustedAuthority=' + window.location.origin + '&arm=' + armEndpoint;
             window.addEventListener("message", function (e) { return _this.postMessageHandler(e); }, false);
         };
         AzureCLI.prototype.handleGetToken = function (evt, audience) {
